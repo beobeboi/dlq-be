@@ -1,12 +1,11 @@
 {
   "name": "beobeboi/dlq-be",
-  "description": "The PHP SDK for encrypt string",
+  "description": "The PHP SDK for DLQ of patient team",
   "type": "library",
   "homepage": "https://github.com/beobeboi/dlq-be",
   "keywords": [
-    "encrypt",
-    "decrypt",
-    "AES-256-CBC",
+    "dlq",
+    "guzzle",
     "php"
   ],
   "license": "MIT",
