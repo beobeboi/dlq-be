@@ -1,0 +1,35 @@
+{
+  "name": "beobeboi/dlq-be",
+  "description": "The PHP SDK for encrypt string",
+  "type": "library",
+  "homepage": "https://github.com/beobeboi/dlq-be",
+  "keywords": [
+    "encrypt",
+    "decrypt",
+    "AES-256-CBC",
+    "php"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bradley Nguyen",
+      "email": "giang.nguyen@diag.vn"
+    }
+  ],
+  "require": {
+    "php": "^8.1.2",
+    "guzzlehttp/guzzle": "^7.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "DiagVN\\Encrypt\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "DiagVN\\Dlq\\Providers\\DlqServiceProvider"
+      ]
+    }
+  }
+}
