@@ -2,6 +2,8 @@
 
 namespace DiagVN\Dlq\Providers;
 
+use DiagVN\Dlq\Api\Dlq;
+use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
 class EncryptServiceProvider extends ServiceProvider
@@ -36,5 +38,17 @@ class EncryptServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(Dlq::class, function () {
+            return new Dlq(
+                new Client([
+                    'connect_timeout' => config('dlq.timeout'),
+                    'base_uri' => config('dlq.dlq_domain'),
+                    'headers' => [
+                        'Authorization' => 'Bearer ' . config('dlq.dlq_api_key'),
+                    ],
+                    'verify' => false,
+                ])
+            );
+        });
     }
 }
