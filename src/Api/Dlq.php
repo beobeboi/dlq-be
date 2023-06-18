@@ -3,6 +3,7 @@
 namespace DiagVN\Dlq\Api;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\RequestOptions;
 
 class Dlq
 {
@@ -13,7 +14,7 @@ class Dlq
 
     public function send(array $params): array
     {
-        $options['json'] = $params;
+        $options[RequestOptions::JSON] = $params;
         $response = $this->client->post('/api/dlq', $options);
         return json_decode($response, true);
     }
