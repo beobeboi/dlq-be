@@ -6,7 +6,7 @@ use DiagVN\Dlq\Api\Dlq;
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
-class EncryptServiceProvider extends ServiceProvider
+class DlqServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
