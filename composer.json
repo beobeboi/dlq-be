@@ -21,7 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "DiagVN\\Encrypt\\": "src/"
+      "DiagVN\\Dlq\\": "src/"
     }
   },
   "extra": {
