@@ -17,7 +17,7 @@ class Dlq
     public function send(array $params): array
     {
         $options[RequestOptions::JSON] = $params;
-        $response = $this->client->post('/api/dlq', $options);
+        $response = $this->client->post('api/dlq', $options);
         return json_decode($response, true);
     }
 
