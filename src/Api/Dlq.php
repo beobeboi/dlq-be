@@ -18,7 +18,7 @@ class Dlq
     {
         $options[RequestOptions::JSON] = $params;
         $response = $this->client->post('patient/dlq/api/dlq', $options);
-        return json_decode($response, true);
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     private function initClient(): Client
