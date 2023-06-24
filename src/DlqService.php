@@ -11,12 +11,13 @@ class DlqService
 
     }
 
-    public function store(string $key, string $topic, array $body): array
+    public function store(string $key, string $topic, array $body, string $type = 'producer'): array
     {
         return $this->dlq->send([
             'key' => $key,
             'topic' => $topic,
             'body' => $body,
+            'type' => $type,
         ]);
     }
 }
