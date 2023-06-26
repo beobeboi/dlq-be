@@ -11,7 +11,7 @@ class DlqService
 
     }
 
-    public function store(string $key, string $topic, array $body, string $type = 'producer'): array
+    public function store(?string $key, string $topic, array $body, string $type = 'producer'): array
     {
         return $this->dlq->send([
             'key' => $key,
